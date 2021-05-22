@@ -1,1 +1,1 @@
-The course challenges
+The code for course challenges
