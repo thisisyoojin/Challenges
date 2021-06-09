@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver import FirefoxOptions, FirefoxProfile
+from selenium.webdriver import FirefoxOptions
 from selenium.common.exceptions import NoSuchElementException
 import json
 
@@ -21,7 +21,6 @@ class Pokemon:
 
     def get_page(self):
         self.driver.get(f'{self.ROOT_DOMAIN}/{self.idx}')
-        self.driver.execute_script("window.scrollTo(0, 700)") 
         self.driver.implicitly_wait(5)
 
     def get_id_and_name(self):    
@@ -75,7 +74,7 @@ class Pokemon:
             return self.pokedex
 
 
-def read_all_pokemons_to_file(start=898):
+def read_all_pokemons_to_file(start=1):
 
     idx = start
     result = []
